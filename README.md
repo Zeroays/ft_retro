@@ -1,9 +1,9 @@
 Installation:
 
 Open Terminal - Execute following commands...
-  brew install ncurses
-  clang++ -Wall -Werror -Wextra *.cpp -lncurses
-  ./a.out
+  </br>brew install ncurses
+  </br>clang++ -Wall -Werror -Wextra *.cpp -lncurses
+  </br>./a.out
   
 Features:
 
