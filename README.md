@@ -9,6 +9,7 @@ Features:
 
 Displays a character ">" on the screen, which represents the player.
 Currently, the player can move with WASD.  To exit out of program, press Home on Keyboard.
+Resizes terminal to specified size in main.cpp
 
 To ADD:
 Scrolling feature
