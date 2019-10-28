@@ -1,47 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Player.hpp                                         :+:      :+:    :+:   */
+/*   Bullet.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrabaib <vrabaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 15:45:18 by vrabaib           #+#    #+#             */
-/*   Updated: 2019/10/27 16:59:06 by vrabaib          ###   ########.fr       */
+/*   Created: 2019/10/26 16:30:15 by vrabaib           #+#    #+#             */
+/*   Updated: 2019/10/27 17:10:04 by vrabaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLAYER_HPP
-#define PLAYER_HPP
+#ifndef BULLET_HPP
+#define BULLET_HPP
 
 #include <ncurses.h>
-#include "Bullet.hpp"
 
-class Player {
+class Bullet {
 
     private:
         int _x;
         int _y;
         char _symbol;
-        int _screenWidth;
-        int _screenHeight;
-        int _ammoIndex;
-        Bullet _ammo[3];
-
+        bool _isActive;
+    
     public:
-        Player( void );
-        Player( int x, int y, char character, int screenWidth, int screenHeight );
-        Player( Player const & player );
-        Player& operator=( Player const & player );
-        ~Player( void );
+        Bullet();
+        Bullet( int x, int y, char character );
+        Bullet( Bullet const & bullet );
+        Bullet& operator=( Bullet const & bullet );
+        ~Bullet( void );
         int getX( void );
         int getY( void );
+        void setX( int x );
+        void setY( int y );
+        bool getActive( void );
+        void setActive( bool active );
         void draw( void );
-        void controls( int keypress );
-        void moveUp( void );
-        void moveDown( void );
-        void shoot( void );
-        void drawBullets( void );
+        void travel( int screenWidth );
 
 };
+
 
 #endif

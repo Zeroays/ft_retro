@@ -6,7 +6,7 @@
 /*   By: vrabaib <vrabaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 19:06:27 by vrabaib           #+#    #+#             */
-/*   Updated: 2019/10/22 21:32:35 by vrabaib          ###   ########.fr       */
+/*   Updated: 2019/10/27 16:47:53 by vrabaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ENEMY_HPP
 
 #include <ncurses.h>
+#include <iostream>
 
 class Enemy {
 
@@ -23,11 +24,13 @@ class Enemy {
         char _symbol;
     
     public:
+        Enemy( void );
         Enemy( int x, int y, char character );
         Enemy( Enemy const & enemy );
         Enemy& operator=( Enemy const & enemy );
         ~Enemy( void );
         void draw( void );
+        void fly( int screenWidth, int screenHeight );
         
 };
 

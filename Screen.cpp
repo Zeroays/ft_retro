@@ -6,7 +6,7 @@
 /*   By: vrabaib <vrabaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:18:49 by vrabaib           #+#    #+#             */
-/*   Updated: 2019/10/22 22:17:34 by vrabaib          ###   ########.fr       */
+/*   Updated: 2019/10/27 16:36:21 by vrabaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void Screen::setup( void ) {
     initscr();
     raw();
     //Register key presses on Standard Screen - stdscr
-    keypad(stdscr, TRUE);
+    nodelay(stdscr, true);
+    keypad(stdscr, true);
     noecho();
     //Remove white cursor
     curs_set(0);
