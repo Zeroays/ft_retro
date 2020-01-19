@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrabaib <vrabaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 14:18:12 by vrabaib           #+#    #+#             */
-/*   Updated: 2019/10/22 22:12:52 by vrabaib          ###   ########.fr       */
+/*   Created: 2019/10/27 20:54:46 by vrabaib           #+#    #+#             */
+/*   Updated: 2019/10/27 21:26:02 by vrabaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #define SCREEN_HPP
 
 #include <ncurses.h>
-
-#define ESC 27
+#include "Stars.hpp"
 
 class Screen {
 
@@ -23,13 +22,20 @@ class Screen {
         int _screenWidth;
         int _screenHeight;
         bool    _done;
+        static const int _starAmt = 20;
+        Star _stars[_starAmt];
 
     public:
+        Screen( void );
         Screen( int width, int height );
+        Screen( Screen const & screen );
+        Screen& operator=( Screen const & screen );
         ~Screen( void );
         bool isDone( void ) const;
         int  getPressed( void );
+        void drawStars( void );
         void setup( void );
+        void setDone( void );
         void clearScreen( void );
         void updateScreen( void );
         void quit( void );

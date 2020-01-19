@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   Stars.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrabaib <vrabaib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/27 20:54:03 by vrabaib           #+#    #+#             */
-/*   Updated: 2019/10/27 20:54:04 by vrabaib          ###   ########.fr       */
+/*   Created: 2019/10/27 20:50:07 by vrabaib           #+#    #+#             */
+/*   Updated: 2019/10/27 21:55:48 by vrabaib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-#define ENEMY_HPP
+#ifndef STARS_HPP
+#define STARS_HPP
 
-#include <ncurses.h>
 #include <iostream>
+#include <curses.h>
+#include <ncurses.h>
 
-class Enemy {
+class Star {
 
     private:
         int _x;
         int _y;
-        char _symbol;
+        int _symbol;
     
     public:
-        Enemy( void );
-        Enemy( int x, int y, char character );
-        Enemy( Enemy const & enemy );
-        Enemy& operator=( Enemy const & enemy );
-        ~Enemy( void );
+        Star( void );
+        Star( int x, int y, char character );
+        Star( Star const & star );
+        Star& operator=( Star const & star );
+        ~Star( void );
         int getX( void );
         int getY( void );
-        void setX( int x );
-        void setY( int y );
+        void setx( int x );
+        void sety( int y );
         void draw( void );
         void fly( int screenWidth, int screenHeight );
         
 };
-
 
 #endif
